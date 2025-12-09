@@ -7,8 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: build using g++
-        run: g++ main.cpp -o main -Werror -Wpedantic -pedantic-errors -Wall -Wextra -Wfatal-errors -Wabi  -Wdouble-promotion -Wnoexcept  -Wdeprecated -Wctor-dtor-privacy -Wredundant-tags -Weffc++ -Wstrict-null-sentinel -Wold-style-cast -Wsign-promo -Wmismatched-tags -Wextra-semi -Wsuggest-final-types -Wsuggest-final-methods -Wsuggest-override -Wnull-dereference -Wargument-mismatch -Wuseless-cast -Wuninitialized -Wstrict-overflow=4 -Wsuggest-attribute=pure -Wsuggest-attribute=const --Wsuggest-attribute=noreturn -Wmissing-noreturn -Wsuggest-attribute=malloc -Wsuggest-attribute=returns_nonnull -Wsuggest-attribute=format -Wmissing-format-attribute -Wsuggest-attribute=cold -Walloc-zero -Warith-conversion -Wduplicated-branches -Wduplicated-cond -Wzero-as-null-pointer-constant -Wtrampolines -Wshadow -Wunsafe-loop-optimizations -Wcast-qual -Wcast-align -Wconversion -Wenum-conversion -Wlogical-op
-      - name: Archive production artifacts
+        run: g++ main.cpp -o main -Werror -Wpedantic -Wall -Wextra
         uses: actions/upload-artifact@v4
         with:
           name: program

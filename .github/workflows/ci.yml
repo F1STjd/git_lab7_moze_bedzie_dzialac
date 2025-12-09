@@ -6,10 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: build using g++
-        run: g++ main.cpp -o main -Werror -Wpedantic -Wall -Wextra
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
+      - uses: actions/setup-dotnet@v3
         with:
-          name: program
-          path: main
+          dotnet-version: '8.0.x'
+      - run: dotnet restore
+      - run: dotnet build
